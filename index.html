@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Nikson Nhalale</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to My Photography Portfolio</h1>
+        <p>Capturing moments, one click at a time.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <div class="image" data-image="images/1-DSC04887.jpg"></div>
+            <div class="image" data-image="images/1-DSC05770.jpg"></div>
+            <div class="image" data-image="images/2-DSC04423.jpg"></div>
+            <div class="image" data-image="images/2-IMG_9931_TIF.jpg"></div>
+            <div class="image" data-image="images/3-DSC04176.jpg"></div>
+            <div class="image" data-image="images/3-DSC05214.jpg"></div>
+            <div class="image" data-image="images/4-DSC04170.jpg"></div>
+            <div class="image" data-image="images/5-DSC04095-Enhanced-NR.jpg"></div>
+            <div class="image" data-image="images/5-DSC04161.jpg"></div>
+            <div class="image" data-image="images/6-DSC01190.jpg"></div>
+            <div class="image" data-image="images/6-DSC04016.jpg"></div>
+            <div class="image" data-image="images/7-DSC00855.jpg"></div>
+            <div class="image" data-image="images/7-DSC03384.jpg"></div>
+            <div class="image" data-image="images/8-DSC00717.jpg"></div>
+            <div class="image" data-image="images/8-DSC03360.jpg"></div>
+            <div class="image" data-image="images/9-DSC00620.jpg"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form onsubmit="sendEmail(event)">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <script>
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent form from refreshing the page
+    
+            // Get the form field values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+    
+            // Create the mailto link
+            const mailtoLink = `mailto:niksonicphotography98@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            )}`;
+    
+            // Open the mailto link
+            window.location.href = mailtoLink;
+        }
+    </script>
+    
+
+    <footer>
+        <p>&copy; 2025 Nikson Nhalale. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
